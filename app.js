@@ -1,3 +1,5 @@
+/************** OBJECTS AND ARRAYS ****************/
+
 var JSONobject =
 {
     firstname: 'Nikola',
@@ -28,6 +30,9 @@ console.log(JSONobject)
 
 console.log('Array of JSON objects:')
 console.log(JSONarray)
+
+
+/************** CLASSES, INHERITANCE, STATIC MEMBERS ****************/
 
 function Person(firstname, lastname, gender)
 {
