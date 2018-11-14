@@ -89,3 +89,4 @@ function doHomework(subject, callback) {
   console.log(promise1);
 //   expected output: [object Promise]
 
+
