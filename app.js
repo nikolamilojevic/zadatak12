@@ -34,25 +34,17 @@ console.log(JSONarray)
 
 /************** CLASSES, INHERITANCE, STATIC MEMBERS ****************/
 
-function Person(firstname, lastname, gender)
-{
+function Person(firstname, lastname, gender) {
     Person.counter++;
-    this.firstName = firstname;
-    this.lastName = lastname;
+    this.firstname = firstname;
+    this.lastname = lastname;
     this.gender = gender;
 }
 
-Person.counter=0;
-Person.showMessage = function() {
-    console.log('This is a static function')
-}
+Person.counter = 0;
 
 var Nikola = new Person('Nikola', 'Milojevic', 'male');
 var Aleksandar = new Person('Aleksandar', 'Milinkovic', 'male');
-
-console.log('Two objects of Person class:')
-console.log(Nikola)
-console.log(Aleksandar)
 
 function Ninja(firstname, lastname, gender, speciality)
 {
@@ -60,12 +52,15 @@ function Ninja(firstname, lastname, gender, speciality)
     this.speciality = speciality;
 }
 
+Ninja.prototype = Object.create(Person.prototype);
+Ninja.prototype.constructor = Ninja;
+
 var Pacariz = new Ninja('Nikola', 'Pacariz', 'male', 'backend');
 
-console.log(Pacariz)
-
+console.log(Pacariz.firstname)
+console.log(Pacariz instanceof Ninja)
+console.log(Nikola, Aleksandar)
 console.log(Person.counter)
-Person.showMessage()
 
 /************** CALLBACK ****************/
 
@@ -93,3 +88,4 @@ function doHomework(subject, callback) {
 
   console.log(promise1);
 //   expected output: [object Promise]
+
